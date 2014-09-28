@@ -1,0 +1,20 @@
+#packages
+#mysql, drush
+
+
+mysql_install_db --user=`whoami` --basedir="$(brew --prefix mariadb)" --datadir=/usr/local/var/mysql --tmpdir=/tmp
+
+
+
+webroot=~/repos/play-smarter/drupal-7.31
+Create mysql database, create table
+drush dl
+chown -R _www $webroot
+
+# Symlink
+#if [ `uname` == "Darwin" ] ; then
+#	# Mac
+#	cd /Library/WebServer
+#	sudo rm -f Documents
+#	sudo ln -s $webroot Documents
+#fi
